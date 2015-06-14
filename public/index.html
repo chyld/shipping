@@ -11,7 +11,12 @@
   <body ng-controller="MainCtrl">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12" ng-if="label">
+          <h3>Label Ready</h3>
+          <a ng-href="{{label}}">Click for Shipping Label</a>
+        </div>
+
+        <div class="col-xs-12" ng-if="!label">
           <h3>Print a USPS Shipping Label</h3>
 
           <form name="shippingForm" novalidate>
@@ -85,26 +90,26 @@
               <div class="col-xs-4">
                 <h4>Package Dimensions</h4>
                 <div class="form-group">
-                  <label for="length">Length</label>
+                  <label for="length">Length (in)</label>
                   <input type="text" class="form-control" id="length" name="length" ng-model="label.dimension.length">
                 </div>
                 <div class="form-group">
-                  <label for="width">Width</label>
+                  <label for="width">Width (in)</label>
                   <input type="text" class="form-control" id="width" name="width" ng-model="label.dimension.width">
                 </div>
                 <div class="form-group">
-                  <label for="height">Height</label>
+                  <label for="height">Height (in)</label>
                   <input type="text" class="form-control" id="height" name="height" ng-model="label.dimension.height">
                 </div>
                 <div class="form-group">
-                  <label for="weight">Weight</label>
+                  <label for="weight">Weight (lbs)</label>
                   <input type="text" class="form-control" id="weight" name="weight" ng-model="label.dimension.weight">
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <button type="submit" ng-click="create(label)" class="btn btn-default">Create Shipping Label</button>
+              <button type="submit" ng-click="create(label)" class="btn btn-default">Create Shipping Label (this may take a few seconds)</button>
             </div>
           </form>
         </div>
