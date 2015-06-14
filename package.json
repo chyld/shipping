@@ -1,0 +1,19 @@
+{
+  "name": "Shipping",
+  "version": "0.0.1",
+  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "license": "BSD",
+  "engines": {
+    "node": "0.12.x"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "blipp": "^2.1.3",
+    "good": "^6.1.4",
+    "good-console": "^5.0.2",
+    "hapi": "^8.6.1",
+    "hoek": "^2.14.0"
+  }
+}
