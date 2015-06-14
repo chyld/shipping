@@ -11,40 +11,103 @@
   <body ng-controller="MainCtrl">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-12">
           <h3>Print a USPS Shipping Label</h3>
 
           <form name="shippingForm" novalidate>
-            <div class="form-group">
-              <label for="from">From Address</label>
-              <textarea class="form-control" id="from" name="from" ng-model="label.from"></textarea>
-            </div>
 
-            <div class="form-group">
-              <label for="destination">Destination Address</label>
-              <textarea class="form-control" id="destination" name="destination" ng-model="label.destination"></textarea>
-            </div>
 
-            <div class="form-group">
-              <label for="weight">Package Weight (lbs)</label>
-              <input type="number" class="form-control" id="weight" name="weight" ng-model="label.weight">
-            </div>
+            <div class="row">
+              <div class="col-xs-4">
+                <h4>From Address</h4>
+                <div class="form-group">
+                  <label for="fromname">Name</label>
+                  <input type="text" class="form-control" id="fromname" name="fromname" ng-model="label.from.name">
+                </div>
+                <div class="form-group">
+                  <label for="fromphone">Phone</label>
+                  <input type="text" class="form-control" id="fromphone" name="fromphone" ng-model="label.from.phone">
+                </div>
+                <div class="form-group">
+                  <label for="fromstreet1">Street 1</label>
+                  <input type="text" class="form-control" id="fromstreet1" name="fromstreet1" ng-model="label.from.street1">
+                </div>
+                <div class="form-group">
+                  <label for="fromstreet2">Street 2</label>
+                  <input type="text" class="form-control" id="fromstreet2" name="fromstreet2" ng-model="label.from.street2">
+                </div>
+                <div class="form-group">
+                  <label for="fromcity">City</label>
+                  <input type="text" class="form-control" id="fromcity" name="fromcity" ng-model="label.from.city">
+                </div>
+                <div class="form-group">
+                  <label for="fromstate">State</label>
+                  <input type="text" class="form-control" id="fromstate" name="fromstate" ng-model="label.from.state">
+                </div>
+                <div class="form-group">
+                  <label for="fromzip">Zip</label>
+                  <input type="text" class="form-control" id="fromzip" name="fromzip" ng-model="label.from.zip">
+                </div>
+              </div>
 
-            <div class="form-group">
-              <label for="dimensions">Package Dimensions (inches)</label>
-              <input type="text" class="form-control" id="dimensions" name="dimensions" ng-model="label.dimensions">
+              <div class="col-xs-4">
+                <h4>To Address</h4>
+                <div class="form-group">
+                  <label for="toname">Name</label>
+                  <input type="text" class="form-control" id="toname" name="toname" ng-model="label.to.name">
+                </div>
+                <div class="form-group">
+                  <label for="tophone">Phone</label>
+                  <input type="text" class="form-control" id="tophone" name="tophone" ng-model="label.to.phone">
+                </div>
+                <div class="form-group">
+                  <label for="tostreet1">Street 1</label>
+                  <input type="text" class="form-control" id="tostreet1" name="tostreet1" ng-model="label.to.street1">
+                </div>
+                <div class="form-group">
+                  <label for="tostreet2">Street 2</label>
+                  <input type="text" class="form-control" id="tostreet2" name="tostreet2" ng-model="label.to.street2">
+                </div>
+                <div class="form-group">
+                  <label for="tocity">City</label>
+                  <input type="text" class="form-control" id="tocity" name="tocity" ng-model="label.to.city">
+                </div>
+                <div class="form-group">
+                  <label for="tostate">State</label>
+                  <input type="text" class="form-control" id="tostate" name="tostate" ng-model="label.to.state">
+                </div>
+                <div class="form-group">
+                  <label for="tozip">Zip</label>
+                  <input type="text" class="form-control" id="tozip" name="tozip" ng-model="label.to.zip">
+                </div>
+              </div>
+
+              <div class="col-xs-4">
+                <h4>Package Dimensions</h4>
+                <div class="form-group">
+                  <label for="length">Length</label>
+                  <input type="text" class="form-control" id="length" name="length" ng-model="label.dimension.length">
+                </div>
+                <div class="form-group">
+                  <label for="width">Width</label>
+                  <input type="text" class="form-control" id="width" name="width" ng-model="label.dimension.width">
+                </div>
+                <div class="form-group">
+                  <label for="height">Height</label>
+                  <input type="text" class="form-control" id="height" name="height" ng-model="label.dimension.height">
+                </div>
+                <div class="form-group">
+                  <label for="weight">Weight</label>
+                  <input type="text" class="form-control" id="weight" name="weight" ng-model="label.dimension.weight">
+                </div>
+              </div>
             </div>
 
             <div class="form-group">
               <button type="submit" ng-click="create(label)" class="btn btn-default">Create Shipping Label</button>
             </div>
           </form>
-
         </div>
-
-        <div class="col-xs-8">
-        </div>
-
       </div>
     </div>
     <script src="/vendor/jquery/dist/jquery.min.js"></script>
