@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="shipping">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shipping Label Generator</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/superhero/bootstrap.min.css">
+  </head>
+  <body ng-controller="MainCtrl">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4">
+          <h3>Print a USPS Shipping Label</h3>
+
+          <form name="shippingForm" novalidate>
+            <div class="form-group">
+              <label for="from">From Address</label>
+              <textarea class="form-control" id="from" name="from" ng-model="label.from"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="destination">Destination Address</label>
+              <textarea class="form-control" id="destination" name="destination" ng-model="label.destination"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="weight">Package Weight (lbs)</label>
+              <input type="number" class="form-control" id="weight" name="weight" ng-model="label.weight">
+            </div>
+
+            <div class="form-group">
+              <label for="dimensions">Package Dimensions (inches)</label>
+              <input type="text" class="form-control" id="dimensions" name="dimensions" ng-model="label.dimensions">
+            </div>
+
+            <div class="form-group">
+              <button type="submit" ng-click="create(label)" class="btn btn-default">Create Shipping Label</button>
+            </div>
+          </form>
+
+        </div>
+
+        <div class="col-xs-8">
+        </div>
+
+      </div>
+    </div>
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/index.js"></script>
+  </body>
+</html>
